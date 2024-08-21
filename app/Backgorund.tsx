@@ -5,7 +5,7 @@ export const Background = () => {
         display: 'flex',
         position: 'absolute',
         zIndex: 1,
-        backgroundColor: 'white',
+        backgroundColor: '#F9DCD5',
         height: '100%',
         width: '100%',
     })

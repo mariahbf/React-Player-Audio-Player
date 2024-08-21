@@ -1,18 +1,21 @@
 'use client'
 
 import { Button, Stack } from "@mui/material";
-import React from "react";
+import React, { LegacyRef } from "react";
 import ReactPlayer from "react-player";
 export interface IYouTubePlayerProps {
     playing:boolean
+    videoUrl?:string
+    setPlayed:(prog: number)=>void
 }
 
-export const YouTubePlayer = ({playing}:IYouTubePlayerProps) => {
+export const YouTubePlayer = ({playing, videoUrl, setPlayed}:IYouTubePlayerProps) => {
     return (
         <Stack>
-             <ReactPlayer url="https://www.youtube.com/watch?v=kM8crupu9DM&pp=ygUJbWVkaXRhY2Fv" controls={false} playing={playing}/>
+             <ReactPlayer url={videoUrl} playing={playing} onProgress={(progress) => {
+       setPlayed(progress.playedSeconds);
+     }}/>
         </Stack>
-       
     );
     
 }
