@@ -11,7 +11,7 @@ export interface IYouTubePlayerProps {
 
 export const YouTubePlayer = ({playing, videoUrl, setPlayed}:IYouTubePlayerProps) => {
     return (
-        <Stack>
+        <Stack display={'flex'} position={'absolute'} alignSelf={'flex-start'}>
              <ReactPlayer url={videoUrl} playing={playing} onProgress={(progress) => {
        setPlayed(progress.playedSeconds);
      }}/>
